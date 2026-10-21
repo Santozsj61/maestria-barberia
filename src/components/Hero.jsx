@@ -84,16 +84,33 @@ export default function Hero({ onOpenBooking, business }) {
             </div>
           </div>
 
-          {/* Quick Info Bar in high contrast dark text */}
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-bold text-[#1c1c1e] border border-neutral-300 py-4 px-6 max-w-2xl mx-auto bg-white/85 rounded-full shadow-md backdrop-blur-md">
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#555555]" />
-              <span className="hidden sm:inline">Lun - Jue: 9:00am - 8:30pm | Vie - Sáb: 8:00am - 9:00pm | Dom: 9:00am - 1:00pm</span>
-              <span className="sm:hidden">Lun - Dom (Horarios especiales)</span>
+          {/* Quick Info Bar - Amplio, Elegante y Estético */}
+          <div className="max-w-3xl mx-auto bg-white/90 border border-neutral-300 rounded-3xl p-4 sm:p-5 shadow-md backdrop-blur-md">
+            {/* Horarios en 3 cápsulas estéticas con aire y separación */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 mb-3.5">
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-100 border border-neutral-300/80 shadow-2xs text-xs">
+                <Clock className="w-3.5 h-3.5 text-[#1c1c1e] shrink-0" />
+                <span className="font-extrabold text-[#1c1c1e]">Lun — Jue:</span>
+                <span className="text-[#48484a] font-bold">9:00 AM — 8:30 PM</span>
+              </div>
+
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-100 border border-neutral-300/80 shadow-2xs text-xs">
+                <span className="font-extrabold text-[#1c1c1e]">Vie — Sáb:</span>
+                <span className="text-[#48484a] font-bold">8:00 AM — 9:00 PM</span>
+              </div>
+
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-100 border border-neutral-300/80 shadow-2xs text-xs">
+                <span className="font-extrabold text-[#1c1c1e]">Domingos:</span>
+                <span className="text-[#48484a] font-bold">9:00 AM — 1:00 PM</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#555555]" />
-              <span>{business?.direccion || 'Calle 30 # 18 - 29 B/ la colombina'}</span>
+
+            {/* Ubicación con espaciado limpio y centrado */}
+            <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#1c1c1e] border-t border-neutral-200/80 pt-3">
+              <MapPin className="w-4 h-4 text-[#555555] shrink-0" />
+              <span className="text-[#3a3a3c] font-semibold tracking-wide">
+                {business?.direccion || 'Calle 30 # 18 - 29 B/ la colombina'}
+              </span>
             </div>
           </div>
         </div>
