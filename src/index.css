@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Deshabilitar selección de texto global en toda la web */
+body, * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Permitir selección normal únicamente en campos de formulario */
+input, textarea {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+@layer utilities {
+  /* Divisores en escala de grises oscuros */
+  .gold-hairline,
+  .palette-hairline {
+    background: linear-gradient(90deg, transparent, #55555e 50%, transparent);
+    height: 1px;
+  }
+
+  .mono-hairline {
+    background: linear-gradient(90deg, transparent, #3f3f46 50%, transparent);
+    height: 1px;
+  }
+  
+  /* Gradiente / color de texto */
+  .gold-gradient-text {
+    color: #ffffff;
+  }
+
+  /* Botón estilo Flyer: Cápsula gris con texto blanco en mayúsculas y chevron */
+  .btn-flyer,
+  .gold-gradient-bg,
+  .btn-primary {
+    background: #7c7c82;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 9999px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-flyer:hover,
+  .gold-gradient-bg:hover,
+  .btn-primary:hover {
+    background: #8f8f96;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    transform: translateY(-1px);
+  }
+  .btn-flyer:active,
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  /* Botón secundario en gris carbón */
+  .gold-btn-outline,
+  .btn-secondary {
+    background: #27272b;
+    border: 1px solid #48484f;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    transition: all 0.25s ease;
+  }
+  .gold-btn-outline:hover,
+  .btn-secondary:hover {
+    border-color: #8f8f96;
+    background: #34343a;
+    color: #ffffff;
+  }
+
+  /* Tarjeta en tonos grises oscuros (sin blanco) */
+  .glass-card {
+    background: #27272b;
+    border: 1px solid #3f3f46;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    border-color: #71717a;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Fotografía profesional con tonalidad fiel a la paleta */
+  .mono-img {
+    filter: grayscale(100%) contrast(105%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+  }
+  .group:hover .mono-img,
+  .mono-img:hover {
+    filter: grayscale(40%) contrast(100%);
+  }
+
+  /* Logo invertido nítido sobre fondos oscuros */
+  .logo-white-blend {
+    filter: invert(1) brightness(1.2) contrast(1.1);
+    mix-blend-mode: screen;
+  }
+}
+
+/* Custom subtle scrollbar para tema oscuro de grises */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #17171a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+/* Estilo limpio para asegurar que no tome bordes ni fondos extraños */
+.logo-nav {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.logo-nav img {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}

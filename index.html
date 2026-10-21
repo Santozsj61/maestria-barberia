@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maestría Barbería — Barbería Premium | Agenda tu cita</title>
+    <meta
+      name="description"
+      content="Maestría Barbería. Reserva tu cita con Andrés Sarria o José Chocue, corte, barba y cejas. Calle 30 # 18 - 29 B/ la colombina. Barbería premium, exclusiva y precisa."
+    />
+    <meta name="theme-color" content="#17171a" />
+    <link rel="icon" type="image/png" href="/assets/maestria-logo.png" />
+
+    <!-- Google Fonts: Playfair Display + Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-neutral-100 text-[#1c1c1e] font-sans antialiased select-none">
+    <!-- Splash de bienvenida Maestría Barber -->
+    <maestria-splash auto-hide hold="600"></maestria-splash>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+      <script>
+    (function () {
+      if (customElements.get('maestria-splash')) return;
+    
+      if (!document.getElementById('maestria-splash-fonts')) {
+        var lk = document.createElement('link');
+        lk.id = 'maestria-splash-fonts';
+        lk.rel = 'stylesheet';
+        lk.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Montserrat:wght@400;500&display=swap';
+        document.head.appendChild(lk);
+      }
+    
+      var LAMBDA = '<svg class="lam" viewBox="-6 0 112 100" aria-hidden="true"><polygon points="43,0 56,0 12,100 0,100"/><polygon points="46,0 60,0 100,100 78,100"/><rect x="-6" y="95" width="24" height="5"/><rect x="72" y="95" width="34" height="5"/></svg>';
+    
+      var TEMPLATE = '\
+    <style>\
+    :host{--bg:#f2f2f0;--ink:#1e2022;--ease:cubic-bezier(.16,1,.3,1);--settle:cubic-bezier(.34,1.56,.64,1);\
+      display:grid;place-items:center;background:var(--bg);color:var(--ink);overflow:hidden;\
+      -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;\
+      width:100%;height:100%;box-sizing:border-box;transition:opacity .6s ease}\
+    :host(:not([inline])){position:fixed;inset:0;z-index:9999;width:auto;height:auto;\
+      padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}\
+    :host(.hiding){opacity:0;pointer-events:none}\
+    .logo{--w:min(90vw,860px);width:var(--w);display:flex;flex-direction:column;align-items:center}\
+    :host([inline]) .logo{--w:min(90%,860px)}\
+    .pole{height:calc(var(--w)*.27);width:auto;overflow:visible;display:block;margin-bottom:calc(var(--w)*.05)}\
+    .pole .s{fill:none;stroke:var(--ink);stroke-linecap:round;stroke-linejoin:round}\
+    .bar{stroke-dasharray:1;stroke-dashoffset:1;stroke-width:4;stroke-linecap:butt}\
+    #stripes path{fill:none;stroke:var(--ink);stroke-linejoin:round;stroke-linecap:round}\
+    .cap{opacity:0}\
+    .cap .dome{stroke-width:5;fill:var(--bg)}\
+    .cap .glint{stroke-width:2.5}\
+    .cap .ring{fill:var(--ink);stroke:var(--ink);stroke-width:4}\
+    .cap .shine{stroke:var(--bg);stroke-width:1.5;fill:none;stroke-linecap:round}\
+    .title{display:flex;justify-content:center;align-items:baseline;gap:.22em;margin:0;line-height:1;font-weight:500;\
+      font-family:"Cinzel","Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:calc(var(--w)*.1)}\
+    .l{display:inline-block;opacity:0}\
+    .lam{height:.7em;width:.74em;fill:currentColor;overflow:visible}\
+    .tag{display:flex;align-items:center;justify-content:center;width:100%;gap:calc(var(--w)*.04);margin-top:calc(var(--w)*.045)}\
+    .sub{font-family:"Montserrat","Plus Jakarta Sans",Arial,sans-serif;font-weight:400;font-size:calc(var(--w)*.028);\
+      letter-spacing:.55em;margin-right:-.55em;text-transform:uppercase;line-height:1;opacity:0}\
+    .ln{height:1px;width:calc(var(--w)*.15);background:var(--ink);transform:scaleX(0)}\
+    .ln.a{transform-origin:right center}.ln.b{transform-origin:left center}\
+    @keyframes draw{to{stroke-dashoffset:0}}\
+    @keyframes dropTop{from{opacity:0;transform:translateY(-34px)}to{opacity:1;transform:none}}\
+    @keyframes dropBot{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}\
+    @keyframes rise{from{opacity:0;filter:blur(8px);transform:translateY(15px)}to{opacity:1;filter:blur(0);transform:none}}\
+    @keyframes riseSub{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}\
+    @keyframes grow{to{transform:scaleX(1)}}\
+    .play .bar{animation:draw .7s var(--ease) 2.2s both}\
+    .play .cap.top{animation:dropTop .9s var(--settle) 2.4s both}\
+    .play .cap.bot{animation:dropBot .9s var(--settle) 2.5s both}\
+    .play .l{animation:rise 1s var(--ease) calc(3.2s + var(--i)*.09s) both}\
+    .play .sub{animation:riseSub .9s var(--ease) 4.4s both}\
+    .play .ln{animation:grow .9s var(--ease) 4.5s both}\
+    @media (prefers-reduced-motion:reduce){.play *{animation-duration:.01s!important;animation-delay:0s!important}}\
+    </style>\
+    <main class="logo" id="stage" role="img" aria-label="Maestría Barber">\
+    <svg class="pole" viewBox="350 60 100 270" aria-hidden="true">\
+    <defs><clipPath id="cyl"><rect id="clipR" x="330" y="40" width="140" height="310"/></clipPath></defs>\
+    <g id="stripes" clip-path="url(#cyl)"></g>\
+    <path class="s bar" pathLength="1" d="M382 114V270"/>\
+    <path class="s bar" pathLength="1" d="M418 114V270"/>\
+    <g class="cap top">\
+    <path class="s dome" d="M378 100A22 22 0 0 1 422 100Z"/>\
+    <path class="s glint" d="M413 95A14 14 0 0 0 407 88"/>\
+    <rect class="ring" x="372" y="100" width="56" height="14" rx="7"/>\
+    <path class="shine" d="M382 107H418"/>\
+    </g>\
+    <g class="cap bot">\
+    <rect class="ring" x="372" y="270" width="56" height="14" rx="7"/>\
+    <path class="shine" d="M382 277H418"/>\
+    <path class="s dome" d="M378 284A22 22 0 0 0 422 284Z"/>\
+    <path class="s glint" d="M413 289A14 14 0 0 1 407 296"/>\
+    </g>\
+    </svg>\
+    <h1 class="title" aria-hidden="true">\
+    <span class="l" style="--i:0">M</span><span class="l" style="--i:1">' + LAMBDA + '</span><span class="l" style="--i:2">E</span><span class="l" style="--i:3">S</span><span class="l" style="--i:4">T</span><span class="l" style="--i:5">R</span><span class="l" style="--i:6">Í</span><span class="l" style="--i:7">' + LAMBDA + '</span>\
+    </h1>\
+    <div class="tag" aria-hidden="true"><span class="ln a"></span><span class="sub">Barber</span><span class="ln b"></span></div>\
+    </main>';
+    
+      var NS = 'http://www.w3.org/2000/svg', PI = Math.PI, A = 26, KY = 39 / (2 * PI);
+      function cl(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+      function lerp(a, b, t) { return a + (b - a) * t; }
+      function outQ(t) { return 1 - Math.pow(1 - t, 4); }
+      function ease3(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+    
+      class MaestriaSplash extends HTMLElement {
+        constructor() {
+          super();
+          this._raf = 0;
+          this._timers = [];
+          this.attachShadow({ mode: 'open' }).innerHTML = TEMPLATE;
+          var r = this.shadowRoot;
+          this._stage = r.getElementById('stage');
+          this._clip = r.getElementById('clipR');
+          var host = r.getElementById('stripes');
+          this._pieces = [];
+          var self = this;
+          function piece(kind, c, ta, tb, fade) {
+            var el = document.createElementNS(NS, 'path');
+            host.appendChild(el);
+            self._pieces.push({ el: el, kind: kind, c: c, ta: ta, tb: tb, fade: fade });
+          }
+          piece('b', 290, -1.5 * PI, -.5 * PI, true);
+          for (var j = 0; j < 6; j++) {
+            var c = 290 - 39 * j;
+            piece('f', c, -.5 * PI, .5 * PI, j === 0 || j === 5);
+            if (j < 5) piece('b', c, .5 * PI, 1.5 * PI, true);
+          }
+        }
+    
+        connectedCallback() {
+          if (this.getAttribute('autoplay') === 'false') return;
+          var fonts = (document.fonts && document.fonts.ready) || Promise.resolve();
+          var self = this;
+          Promise.race([fonts, new Promise(function (res) { setTimeout(res, 1200); })]).then(function () {
+            if (self.isConnected) self.play();
+          });
+        }
+    
+        disconnectedCallback() { this._stop(); }
+    
+        _stop() {
+          cancelAnimationFrame(this._raf);
+          this._timers.forEach(clearTimeout);
+          this._timers = [];
+        }
+    
+        _frame(tm) {
+          var yRev = lerp(330, 78, outQ(cl(tm / 1700)));
+          var phi = 2 * PI * (1 - outQ(cl(tm / 2000)));
+          var m = ease3(cl((tm - 1500) / 800));
+          var k = this._clip;
+          k.setAttribute('x', lerp(330, 382, m));
+          k.setAttribute('y', lerp(40, 114, m));
+          k.setAttribute('width', lerp(140, 36, m));
+          k.setAttribute('height', lerp(310, 156, m));
+          this._pieces.forEach(function (p) {
+            var yA = p.c - KY * p.ta, yB = p.c - KY * p.tb;
+            var sv = cl((yA - yRev) / (yA - yB));
+            if (sv <= 0) { p.el.setAttribute('d', ''); return; }
+            var n = Math.max(2, Math.ceil(22 * sv) + 1), d = '';
+            for (var i = 0; i < n; i++) {
+              var s = sv * i / (n - 1), th = p.ta + (p.tb - p.ta) * s;
+              var x = 400 + A * (p.kind === 'b' ? 1 - m : 1) * Math.sin(th + phi), y = p.c - KY * th;
+              if (p.kind === 'f') { var u = th / (PI / 2); x = lerp(x, 400 + 34 * u, m); y = lerp(y, p.c - 34 * u, m); }
+              d += (i ? 'L' : 'M') + x.toFixed(2) + ' ' + y.toFixed(2);
+            }
+            var depth = .5 + .5 * Math.cos((p.ta + p.tb) / 2 + phi);
+            var w0 = 4 + 6 * depth, w, o;
+            if (p.kind === 'f') { w = lerp(w0, 12, m); o = p.fade ? 1 - cl(m / .6) : 1; }
+            else { w = lerp(w0, 3, m); o = .5 * (1 - cl(m / .55)); }
+            p.el.setAttribute('d', d);
+            p.el.setAttribute('stroke-width', w.toFixed(2));
+            p.el.setAttribute('opacity', o.toFixed(3));
+          });
+        }
+    
+        play() {
+          var self = this;
+          this._stop();
+          this.classList.remove('hiding');
+          this.style.display = '';
+          this._stage.classList.remove('play');
+          void this._stage.offsetWidth;
+          this._stage.classList.add('play');
+          var t0 = performance.now();
+          (function tick(now) {
+            var tm = Math.max(0, now - t0);
+            if (tm < 2400) { self._frame(tm); self._raf = requestAnimationFrame(tick); }
+            else self._frame(2400);
+          })(t0);
+          var hold = parseInt(this.getAttribute('hold') || '600', 10);
+          this._timers.push(setTimeout(function () {
+            self.dispatchEvent(new CustomEvent('splashcomplete', { bubbles: true, composed: true }));
+            if (self.hasAttribute('auto-hide')) {
+              self.classList.add('hiding');
+              self._timers.push(setTimeout(function () {
+                self.style.display = 'none';
+                self.dispatchEvent(new CustomEvent('splashhidden', { bubbles: true, composed: true }));
+              }, 650));
+            }
+          }, 5400 + hold));
+        }
+    
+        replay() { this.play(); }
+      }
+    
+      customElements.define('maestria-splash', MaestriaSplash);
+    })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,529 @@
+{
+  "business": {
+    "nombre": "Maestría Barbería",
+    "direccion": "Calle 30 # 18 - 29 B/ la colombina",
+    "telefono": "3161277718",
+    "instagram": "@maestria__barberia",
+    "instagramUrl": "https://www.instagram.com/maestria__barberia",
+    "tiktok": "@maestria_barberia",
+    "tiktokUrl": "https://www.tiktok.com/@maestria_barberia",
+    "heroKicker": "Barbería premium",
+    "heroTitulo": "Elige tu experiencia",
+    "horarios": {
+      "lunesJueves": "9:00 AM - 8:30 PM",
+      "viernesSabado": "8:00 AM - 9:00 PM",
+      "domingos": "9:00 AM - 1:00 PM"
+    },
+    "galleryKicker": "El espacio",
+    "galleryTitulo": "El lugar de tu próxima experiencia",
+    "seoTitulo": "Maestría Barbería — Barbería Premium | Agenda tu cita",
+    "seoDescripcion": "Maestría Barbería. Reserva tu cita con Jhoan o Kevin, corte, barba y cejas. Calle 30 # 18 - 29 B/ la colombina. Barbería premium, moderna y precisa.",
+    "announcementImageUrl": "/api/media/930c2a719f89323afd0f6c7e0f77ead9.png",
+    "announcementEnabled": false
+  },
+  "barbers": [
+    {
+      "id": "jhoan",
+      "nombre": "Jhoan",
+      "role": "Barber Stylist",
+      "instagram": "@jhoan_o204",
+      "instagramUrl": "https://www.instagram.com/jhoan_o204",
+      "fotoUrl": "/assets/barber-sample-1.jpg"
+    },
+    {
+      "id": "kevin",
+      "nombre": "Kevin",
+      "role": "Barber Stylist",
+      "instagram": "@__050723",
+      "instagramUrl": "https://www.instagram.com/__050723",
+      "fotoUrl": "/assets/barber-sample-2.jpg"
+    }
+  ],
+  "services": [
+    {
+      "id": "corte-sencillo",
+      "nombre": "Corte Sencillo",
+      "precio": 18000,
+      "duracionMinutos": 30,
+      "barberosPermitidos": null,
+      "diasAnticipacionMinima": 0,
+      "descripcion": "Incluye cejas o mascarilla de puntos negros"
+    },
+    {
+      "id": "corte-barba",
+      "nombre": "Corte + Barba",
+      "precio": 22000,
+      "duracionMinutos": 45,
+      "barberosPermitidos": null,
+      "diasAnticipacionMinima": 0,
+      "descripcion": "Incluye cejas o mascarilla de puntos negros"
+    },
+    {
+      "id": "perfilado-barba",
+      "nombre": "Perfilado de Barba",
+      "precio": 8000,
+      "duracionMinutos": 20,
+      "barberosPermitidos": null,
+      "diasAnticipacionMinima": 0,
+      "descripcion": "Definición y perfilado impecable con navaja y toalla caliente"
+    },
+    {
+      "id": "perfilado-cejas",
+      "nombre": "Perfilado de Cejas",
+      "precio": 5000,
+      "duracionMinutos": 15,
+      "barberosPermitidos": null,
+      "diasAnticipacionMinima": 0,
+      "descripcion": "Diseño y limpieza milimétrica adaptada a tus facciones"
+    },
+    {
+      "id": "marcada",
+      "nombre": "Marcada",
+      "precio": 7000,
+      "duracionMinutos": 20,
+      "barberosPermitidos": null,
+      "diasAnticipacionMinima": 0,
+      "descripcion": "Marcada y delineado nítido de contornos"
+    },
+    {
+      "id": "domicilio",
+      "nombre": "Servicio a Domicilio",
+      "precio": 30000,
+      "duracionMinutos": 60,
+      "barberosPermitidos": null,
+      "diasAnticipacionMinima": 1,
+      "descripcion": "Atención personalizada en la comodidad de tu hogar (disponible con Jhoan y Kevin)"
+    }
+  ],
+  "products": [
+    {
+      "id": "producto-1",
+      "nombre": "1 Million Lucky — Rabanne (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-2",
+      "nombre": "Smartwatch Mefit Plus ME03 Ultra 3",
+      "precio": 55000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-3",
+      "nombre": "Khamrah — Lattafa (100 ml)",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": true,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-4",
+      "nombre": "1 Million — Paco Rabanne (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-5",
+      "nombre": "9pm — Afnan",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-6",
+      "nombre": "Vulcan — Lattafa",
+      "precio": 135000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-7",
+      "nombre": "Eros — Versace",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-8",
+      "nombre": "Invictus — Paco Rabanne",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-9",
+      "nombre": "212 Men NYC — Carolina Herrera",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-10",
+      "nombre": "Eau de Lacoste L.12.12 Noir — Lacoste",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-11",
+      "nombre": "Phantom — Paco Rabanne",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-12",
+      "nombre": "212 VIP — Carolina Herrera",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-13",
+      "nombre": "Fame — Paco Rabanne",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-14",
+      "nombre": "Amber Noir (Luxury Collection) — Orientica, body spray",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-15",
+      "nombre": "Khamrah — Lattafa, body spray",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-16",
+      "nombre": "Bade'e Al Oud Noble Blush — Lattafa, body spray",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-17",
+      "nombre": "Sovereign Velocity — Armaf, body spray",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-18",
+      "nombre": "Shampoo Fortalecedor Trichogen — Nativo's Fénix Barber (250 ml)",
+      "precio": 40000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "cuidado"
+    },
+    {
+      "id": "producto-19",
+      "nombre": "Bebida a base de Borojó — Primitivo X Men (500 ml)",
+      "precio": 40000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "cuidado"
+    },
+    {
+      "id": "producto-20",
+      "nombre": "Cera Capilar Gold Trichogen — Nativo's Fénix Barber (160 g)",
+      "precio": 28000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "cuidado"
+    },
+    {
+      "id": "producto-21",
+      "nombre": "Cera Styling Wax CBD Trichogen — Nativo's Fénix Barber",
+      "precio": 30000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "cuidado"
+    },
+    {
+      "id": "producto-22",
+      "nombre": "Cera Vibrante Trichogen — Nativo's Fénix Barber (160 g)",
+      "precio": 30000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "cuidado"
+    },
+    {
+      "id": "producto-23",
+      "nombre": "Adaptador USB-C 35W + cable USB-C a USB-C",
+      "precio": 45000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-24",
+      "nombre": "Adaptador USB-C 25W + cable USB-C a Lightning",
+      "precio": 45000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-25",
+      "nombre": "AirPods serie 4",
+      "precio": 70000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-26",
+      "nombre": "Power Bank 10000mAh — Amaya",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-27",
+      "nombre": "MagSafe Battery Pack — iPhone",
+      "precio": 90000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-28",
+      "nombre": "AirPods Max",
+      "precio": 90000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-29",
+      "nombre": "Derma Roller System",
+      "precio": 20000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "cuidado"
+    },
+    {
+      "id": "producto-30",
+      "nombre": "Smartwatch Mefit Plus ME08 — Series 10",
+      "precio": 65000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-31",
+      "nombre": "Parlante JBL Bombox 4",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-32",
+      "nombre": "Reloj Richard Mille — Skeleton Carbon",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-33",
+      "nombre": "Reloj deportivo urbano — dial gráfico",
+      "precio": null,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-34",
+      "nombre": "Reloj Rolex — Oyster Perpetual Datejust",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-35",
+      "nombre": "LED Pocket Video Light — AY-83",
+      "precio": 30000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-36",
+      "nombre": "Smartwatch infantil Dragon Ball Z — KR-918 Mini",
+      "precio": 95000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "tecnologia"
+    },
+    {
+      "id": "producto-37",
+      "nombre": "9pm Dúo — Splash + Mantequilla Corporal (Afnan)",
+      "precio": 35000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-38",
+      "nombre": "Eau de Lacoste L.12.12 Blanc — Lacoste (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-39",
+      "nombre": "CK One — Calvin Klein (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-40",
+      "nombre": "Polo Blue — Ralph Lauren, Parfum (4.2 oz)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-41",
+      "nombre": "Eros Flame — Versace (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-42",
+      "nombre": "Bad Boy — Carolina Herrera (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-43",
+      "nombre": "Invictus Victory — Paco Rabanne",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-44",
+      "nombre": "212 VIP Men — Carolina Herrera (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-45",
+      "nombre": "Silver Mountain Water — Creed (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-46",
+      "nombre": "Sorbetto Rosso (Edición Limitada) — Escada (100 ml)",
+      "precio": 75000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    },
+    {
+      "id": "producto-47",
+      "nombre": "Tommy — Tommy Hilfiger (100 ml)",
+      "precio": 85000,
+      "imagenUrl": null,
+      "pendiente": false,
+      "agotado": false,
+      "category": "lociones"
+    }
+  ],
+  "hours": {
+    "startHour": 7,
+    "endHour": 21,
+    "stepMinutes": 30
+  },
+  "emailsEnabled": false
+}
