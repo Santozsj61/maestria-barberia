@@ -26,6 +26,7 @@ const supabase = (SUPABASE_URL && SUPABASE_SERVICE_KEY)
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
+    bot: 'maestria-bot',
     business: 'Maestría Barbería',
     database: supabase ? 'conectada' : 'simulada_local',
     timestamp: new Date().toISOString()
