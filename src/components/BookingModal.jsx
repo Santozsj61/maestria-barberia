@@ -10,7 +10,9 @@ import {
   ChevronLeft,
   CheckCircle2,
   MessageCircle,
+  Loader2,
 } from 'lucide-react';
+import { bookingService } from '../services/bookingService.js';
 
 export default function BookingModal({
   isOpen,
@@ -138,11 +140,35 @@ export default function BookingModal({
     }).format(val);
   };
 
-  const handleFinishBooking = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFinishBooking = async (e) => {
     e.preventDefault();
-    const code = `MAEST-${Math.floor(10000 + Math.random() * 90000)}`;
-    setReservationCode(code);
-    setStep(5);
+    setIsSubmitting(true);
+    try {
+      const res = await bookingService.createBooking({
+        barberId: selectedBarber,
+        clientName: clientData.nombre,
+        clientPhone: clientData.telefono,
+        date: selectedDate,
+        time: selectedTime,
+        serviceIds: selectedServices,
+        serviceNames,
+        totalPrice,
+        durationMinutes: totalDuration,
+        notes: clientData.notas,
+        source: 'WEB_APP'
+      });
+      setReservationCode(res.code);
+      setStep(5);
+    } catch (err) {
+      console.error('Error creando reserva:', err);
+      const code = `MAEST-${Math.floor(10000 + Math.random() * 90000)}`;
+      setReservationCode(code);
+      setStep(5);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const barberObj = barbers.find((b) => b.id === selectedBarber) || {
@@ -524,10 +550,20 @@ _¡Hola! Acabo de registrar mi cita en la web y deseo confirmarla._`;
               </button>
               <button
                 type="submit"
-                className="px-7 py-3 rounded-full bg-[#c8c8cc] hover:bg-[#b8b8bd] text-[#1c1c1e] font-black text-xs uppercase tracking-wider flex items-center gap-2 shadow-md transition-transform active:scale-95 border border-[#8e8e93]"
+                disabled={isSubmitting}
+                className="px-7 py-3 rounded-full bg-[#c8c8cc] hover:bg-[#b8b8bd] text-[#1c1c1e] font-black text-xs uppercase tracking-wider flex items-center gap-2 shadow-md transition-transform active:scale-95 border border-[#8e8e93] disabled:opacity-50 cursor-pointer"
               >
-                <span>Confirmar Reserva</span>
-                <CheckCircle2 className="w-4 h-4" />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin text-[#1c1c1e]" />
+                    <span>Guardando Reserva...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Confirmar Reserva</span>
+                    <CheckCircle2 className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </div>
           </form>
